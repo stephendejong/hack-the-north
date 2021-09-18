@@ -17,6 +17,11 @@ chersWardrobeText = Label(root, text="CHER'S WARDROBE", font=("Impact", 30), fg=
 chersWardrobeText.place(x=0, y=0)
 chersWardrobeText.config(bg='black')
 
+#fall fashions
+fallFashionsText = Label(root, text="FALL FASHIONS", font=("Impact", 24), fg='white', relief='raised')
+fallFashionsText.place(x=width/2-100, y=2)
+fallFashionsText.config(bg='black')
+
 # adding background image
 bgImage = PhotoImage(file = "leopard-bg.png")
 background = Label(root, image = bgImage)
