@@ -95,19 +95,19 @@ def nextbottom(bi):
 photoL = PhotoImage(file = "left-arrow.png")
 photoR = PhotoImage(file = "right-arrow.png")
 #Bottom left
-buttonBL = Button(root, text = "Howdy", width = "235", height = "50",bd=5,image=photoL)
+buttonBL = Button(root, width = "235", height = "50",bd=5,image=photoL)
 buttonBL.pack()
 buttonBL.place(x=width/2-250, y=595)
 #Bottom right
-buttonBR = Button(root, text = "Howdy", width = "235", height = "50",bd=5, image=photoR, command=lambda: nextbottom(bottomindex))
+buttonBR = Button(root, width = "235", height = "50",bd=5, image=photoR, command=lambda: nextbottom(bottomindex))
 buttonBR.pack()
 buttonBR.place(x=width/2, y=595)
 #Top left
-buttonTL = Button(root, text = "Howdy", width = "235", height = "50",bd=5, image=photoL)
+buttonTL = Button(root, width = "235", height = "50",bd=5, image=photoL)
 buttonTL.pack()
 buttonTL.place(x=width/2-250, y=300)
 #Top right
-buttonTR = Button(root, text = "Howdy", width = "235", height = "50",bd=5, image=photoR, command=lambda: nexttop(topindex))
+buttonTR = Button(root, width = "235", height = "50",bd=5, image=photoR, command=lambda: nexttop(topindex))
 buttonTR.pack()
 buttonTR.place(x=width/2, y=300)
 
