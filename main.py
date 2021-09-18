@@ -74,6 +74,18 @@ def nexttop(ti):
     shirtbox.configure(image=newimg)
     shirtbox.image = newimg
 
+    
+#next bottom
+def nextbottom(bi):
+    global bottomindex
+    if (bi == len(bottomlist) - 1):
+        newimg = bottomlist[0]
+        bottomindex = 0
+    else:
+        newimg = bottomlist[bi + 1]
+        bottomindex = bottomindex + 1
+    bottombox.configure(image=newimg)
+    shirtbox.image = newimg
 
 #placing the button
 photoL = PhotoImage(file = "left-arrow.png")
@@ -83,7 +95,7 @@ buttonBL = Button(root, text = "Howdy", width = "235", height = "50",bd=5,image=
 buttonBL.pack()
 buttonBL.place(x=width/2-250, y=595)
 #Bottom right
-buttonBR = Button(root, text = "Howdy", width = "235", height = "50",bd=5, image=photoR)
+buttonBR = Button(root, text = "Howdy", width = "235", height = "50",bd=5, image=photoR, command=lambda: nextbottom(bottomindex))
 buttonBR.pack()
 buttonBR.place(x=width/2, y=595)
 #Top left
