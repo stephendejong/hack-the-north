@@ -42,9 +42,25 @@ top5 = PhotoImage(file="top5.png")
 
 toplist = [top2, top4, top5]
 
-currentimg = toplist[1]
+topindex = toplist[1]
 
-shirtbox.config(image=currentimg, width="300", height="300")
+shirtbox.config(image=topindex, width="300", height="300")
+
+topindex = 0
+bottomindex = 1
+
+#DressMe button
+def action(topindex, bottomindex):
+    if (topindex == bottomindex):
+        dressme = Label(root, bg='white', width="20", height="5", text="CUTE!", font=("Impact", 24))
+        dressme.place(x=width / 2 - 250, y=200)
+    else:
+        dressme = Label(root, bg='white', width="20", height="5", text="You're totally buggin'!", font=("Impact", 24))
+        dressme.place(x=width / 2 - 250, y=200)
+
+
+dressmebutton = Button(root, text="DRESS ME", command=lambda: action(topindex, bottomindex))
+dressmebutton.place(x=900, y=500)
 
 # show window
 root.mainloop()
