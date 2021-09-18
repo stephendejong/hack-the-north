@@ -22,5 +22,9 @@ bgImage = PhotoImage(file = "leopard-bg.png")
 background = Label(root, image = bgImage)
 background.place(x=0, y=50)
 
+#shirt label
+shirtbox = tkinter.Label(root, bg='white', width="70", height="20")
+shirtbox.place(x=width/2-250, y=50)
+
 # show window
 root.mainloop()
