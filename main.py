@@ -67,6 +67,7 @@ def dressmereaction(topindex, bottomindex):
 dressmebutton = Button(root, text="DRESS ME", width = "15", height = "2", bd=5, font=("Impact", 24), command=lambda: dressmereaction(topindex, bottomindex))
 dressmebutton.place(x=1100, y=500)
 
+##CHANGING IMAGES
 def nexttop(ti):
     global topindex
     if (ti == len(toplist)-1):
@@ -75,6 +76,17 @@ def nexttop(ti):
     else:
         newimg = toplist[ti+1]
         topindex = topindex+1
+    shirtbox.configure(image=newimg)
+    shirtbox.image = newimg
+
+def lasttop(ti):
+    global topindex 
+    if (ti == 0):
+        newimg = toplist[-1]
+        topindex = len(toplist)-1
+    else:
+        newimg = toplist[ti - 1]
+        topindex = topindex - 1
     shirtbox.configure(image=newimg)
     shirtbox.image = newimg
 
@@ -87,14 +99,25 @@ def nextbottom(bi):
         newimg = bottomlist[bi + 1]
         bottomindex = bottomindex + 1
     bottombox.configure(image=newimg)
-    shirtbox.image = newimg
+    bottombox.image = newimg
+
+def lastbottom(bi):
+    global bottomindex
+    if (bi == 0):
+        newimg = bottomlist[-1]
+        bottomindex = len(bottomlist)-1
+    else:
+        newimg = bottomlist[bi - 1]
+        bottomindex = bottomindex - 1
+    bottombox.configure(image=newimg)
+    bottombox.image = newimg
 
 
 #placing the button
 photoL = PhotoImage(file = "left-arrow.png")
 photoR = PhotoImage(file = "right-arrow.png")
 #Bottom left
-buttonBL = Button(root, text = "Howdy", width = "240", height = "50",bd=5,image=photoL)
+buttonBL = Button(root, text = "Howdy", width = "240", height = "50",bd=5,image=photoL, command=lambda: lastbottom(bottomindex))
 buttonBL.pack()
 buttonBL.place(x=width/2-250, y=695)
 #Bottom right
@@ -102,7 +125,7 @@ buttonBR = Button(root, text = "Howdy", width = "242", height = "50",bd=5, image
 buttonBR.pack()
 buttonBR.place(x=width/2, y=695)
 #Top left
-buttonTL = Button(root, text = "Howdy", width = "240", height = "50",bd=5, image=photoL)
+buttonTL = Button(root, text = "Howdy", width = "240", height = "50",bd=5, image=photoL, command=lambda: lasttop(topindex))
 buttonTL.pack()
 buttonTL.place(x=width/2-250, y=350)
 #Top right
