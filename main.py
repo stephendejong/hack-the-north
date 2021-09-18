@@ -30,11 +30,11 @@ background.place(x=0, y=50)
 
 #shirt label
 shirtbox = Label(root, bg='white', width="70", height="15")
-shirtbox.place(x=width/2-250, y=70)
+shirtbox.place(x=width/2-250, y=60)
 
 #pant label
 bottombox = Label(root, bg='white', width="70", height="15")
-bottombox.place(x=width/2-250, y=365)
+bottombox.place(x=width/2-250, y=400)
 
 #image gallery
 top2 = PhotoImage(file="top2.png")
@@ -52,21 +52,20 @@ currentbot = bottomlist[0]
 topindex = 0
 bottomindex = 0
 
-shirtbox.config(image=currentimg, width="300", height="300")
-bottombox.config(image=currentbot, width="300", height="300")
+shirtbox.config(image=currentimg, width="500", height="300")
+bottombox.config(image=currentbot, width="500", height="300")
 
 def dressmereaction(topindex, bottomindex):
     if topindex == bottomindex:
         dressme = Label(root, bg='white', width="20", height="5", text="CUTE!", font=("Impact", 24))
-        dressme.place(x=width / 2 - 250, y=200)
+        dressme.place(x=1060, y=200)
     else:
         dressme = Label(root, bg='white', width="20", height="5", text="You're totally buggin'!", font=("Impact", 24))
-        dressme.place(x=width / 2 - 250, y=200)
+        dressme.place(x=1060, y=200)
 
 
-dressmebutton = Button(root, text="DRESS ME", command=lambda: dressmereaction(topindex, bottomindex))
-dressmebutton.place(x=900, y=500)
-
+dressmebutton = Button(root, text="DRESS ME", width = "15", height = "2", bd=5, font=("Impact", 24), command=lambda: dressmereaction(topindex, bottomindex))
+dressmebutton.place(x=1100, y=500)
 
 def nexttop(ti):
     global topindex
@@ -95,21 +94,21 @@ def nextbottom(bi):
 photoL = PhotoImage(file = "left-arrow.png")
 photoR = PhotoImage(file = "right-arrow.png")
 #Bottom left
-buttonBL = Button(root, width = "235", height = "50",bd=5,image=photoL)
+buttonBL = Button(root, text = "Howdy", width = "240", height = "50",bd=5,image=photoL)
 buttonBL.pack()
-buttonBL.place(x=width/2-250, y=595)
+buttonBL.place(x=width/2-250, y=695)
 #Bottom right
-buttonBR = Button(root, width = "235", height = "50",bd=5, image=photoR, command=lambda: nextbottom(bottomindex))
+buttonBR = Button(root, text = "Howdy", width = "242", height = "50",bd=5, image=photoR, command=lambda: nextbottom(bottomindex))
 buttonBR.pack()
-buttonBR.place(x=width/2, y=595)
+buttonBR.place(x=width/2, y=695)
 #Top left
-buttonTL = Button(root, width = "235", height = "50",bd=5, image=photoL)
+buttonTL = Button(root, text = "Howdy", width = "240", height = "50",bd=5, image=photoL)
 buttonTL.pack()
-buttonTL.place(x=width/2-250, y=300)
+buttonTL.place(x=width/2-250, y=350)
 #Top right
-buttonTR = Button(root, width = "235", height = "50",bd=5, image=photoR, command=lambda: nexttop(topindex))
+buttonTR = Button(root, text = "Howdy", width = "242", height = "50",bd=5, image=photoR, command=lambda: nexttop(topindex))
 buttonTR.pack()
-buttonTR.place(x=width/2, y=300)
+buttonTR.place(x=width/2, y=350)
 
 # show window
 root.mainloop()
