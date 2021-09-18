@@ -1,9 +1,10 @@
+
 from tkinter import *
 
 # making window
 root = Tk()
 root.wm_title("Clueless")
-width = root.winfo_screenwidth() 
+width = root.winfo_screenwidth()
 height = root.winfo_screenheight()-75
 root.geometry("%dx%d" % (width, height))
 
@@ -23,8 +24,8 @@ fallFashionsText.place(x=width/2-100, y=2)
 fallFashionsText.config(bg='black')
 
 # adding background image
-bgImage = PhotoImage(file = "leopard-bg.png")
-background = Label(root, image = bgImage)
+bgImage = PhotoImage(file="leopard-bg.png")
+background = Label(root, image=bgImage)
 background.place(x=0, y=50)
 
 #shirt label
@@ -32,26 +33,30 @@ shirtbox = Label(root, bg='white', width="70", height="15")
 shirtbox.place(x=width/2-250, y=70)
 
 #pant label
-pantbox = Label(root, bg='white', width="70", height="15")
-pantbox.place(x=width/2-250, y=365)
+bottombox = Label(root, bg='white', width="70", height="15")
+bottombox.place(x=width/2-250, y=365)
 
 #image gallery
 top2 = PhotoImage(file="top2.png")
 top4 = PhotoImage(file="shirt4.png")
 top5 = PhotoImage(file="top5.png")
+bottom1 = PhotoImage(file="skirt1.png")
+bottom2 = PhotoImage(file="skirt2.png")
+bottom3 = PhotoImage(file="skirt3.png")
 
 toplist = [top2, top4, top5]
+bottomlist = [bottom1, bottom2, bottom3]
 
-topindex = toplist[1]
-
-shirtbox.config(image=topindex, width="300", height="300")
-
+currentimg = toplist[0]
+currentbot = bottomlist[0]
 topindex = 0
-bottomindex = 1
+bottomindex = 0
 
-#DressMe button
-def action(topindex, bottomindex):
-    if (topindex == bottomindex):
+shirtbox.config(image=currentimg, width="300", height="300")
+bottombox.config(image=currentbot, width="300", height="300")
+
+def dressmereaction(topindex, bottomindex):
+    if topindex == bottomindex:
         dressme = Label(root, bg='white', width="20", height="5", text="CUTE!", font=("Impact", 24))
         dressme.place(x=width / 2 - 250, y=200)
     else:
@@ -59,10 +64,10 @@ def action(topindex, bottomindex):
         dressme.place(x=width / 2 - 250, y=200)
 
 
-dressmebutton = Button(root, text="DRESS ME", command=lambda: action(topindex, bottomindex))
+dressmebutton = Button(root, text="DRESS ME", command=lambda: dressmereaction(topindex, bottomindex))
 dressmebutton.place(x=900, y=500)
 
-#next top
+
 def nexttop(ti):
     global topindex
     if (ti == len(toplist)-1):
@@ -74,8 +79,6 @@ def nexttop(ti):
     shirtbox.configure(image=newimg)
     shirtbox.image = newimg
 
-    
-#next bottom
 def nextbottom(bi):
     global bottomindex
     if (bi == len(bottomlist) - 1):
@@ -86,6 +89,7 @@ def nextbottom(bi):
         bottomindex = bottomindex + 1
     bottombox.configure(image=newimg)
     shirtbox.image = newimg
+
 
 #placing the button
 photoL = PhotoImage(file = "left-arrow.png")
