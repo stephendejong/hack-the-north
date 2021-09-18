@@ -1,12 +1,18 @@
 import tkinter as tk
 
 root = tk.Tk()
-def callback():
-    print('The button was cliked!')
-   
+index = 0
+list = ["hi", "hey", "yes"]
+
+def buttonResponse():
+    global index
+    print('The button was cliked!',list[index])
+    index += 1
+    if (index == len(list)):
+        index = 0
 
 
-button = tk.Button(root, text = "Click Here", command=callback)
+button = tk.Button(root, text = "Click Here", command=buttonResponse)
 button.pack(padx=100, pady=50)
 
 root.mainloop()
