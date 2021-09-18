@@ -1,20 +1,20 @@
+#hackthenorth elle woods CHER outfit customizer
 
-#hackthenorth elle woods outfit customizer
+from tkinter import *
 
-import tkinter
+# making window
+root = Tk()
+root.wm_title("Clueless")
+width= root.winfo_screenwidth() 
+height= root.winfo_screenheight()-75
+root.geometry("%dx%d" % (width, height))
 
+# adding background image
+bgImage = PhotoImage(file = "leopard-bg.png")
+label1 = Label(root, image = bgImage)
+label1.place(x=0, y=0)
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-
-
-
+# show window
+root.mainloop()
 
 
