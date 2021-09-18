@@ -9,10 +9,19 @@ width= root.winfo_screenwidth()
 height= root.winfo_screenheight()-75
 root.geometry("%dx%d" % (width, height))
 
-# adding background image
-bgImage = PhotoImage(file = "leopard-bg.png")
-label1 = Label(root, image = bgImage)
-label1.place(x=0, y=0)
+bg = tkinter.PhotoImage(file="leopard-bg.PNG")
+
+#banner
+banner = tkinter.Label(root, width="1000", height="50")
+banner.place(x=0, y=0)
+banner.config(bg='black')
+
+chers = tkinter.Label(root, text="CHER'S WARDROBE", font=("Impact", 30), fg='white')
+chers.place(x=0, y=0)
+chers.config(bg='black')
+
+cheetah = tkinter.Label(root, image=bg)
+cheetah.place(x=0, y=50)
 
 # show window
 root.mainloop()
