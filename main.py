@@ -62,5 +62,15 @@ def action(topindex, bottomindex):
 dressmebutton = Button(root, text="DRESS ME", command=lambda: action(topindex, bottomindex))
 dressmebutton.place(x=900, y=500)
 
+#next top
+def nexttop(topindex):
+    newimg = toplist[topindex+1]
+    shirtbox.configure(image=newimg)
+    shirtbox.image = newimg
+
+
+nextbutton = Button(root, text=">>", command=lambda: nexttop(topindex))
+nextbutton.place(x=900, y=500)
+
 # show window
 root.mainloop()
