@@ -3,8 +3,8 @@ from tkinter import *
 # making window
 root = Tk()
 root.wm_title("Clueless")
-width= root.winfo_screenwidth()-150 
-height= root.winfo_screenheight()-75
+width = root.winfo_screenwidth() 
+height = root.winfo_screenheight()-75
 root.geometry("%dx%d" % (width, height))
 
 # banner
