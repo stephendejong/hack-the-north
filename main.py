@@ -1,20 +1,34 @@
-#hackthenorth elle woods CHER outfit customizer
-
 from tkinter import *
 
 # making window
 root = Tk()
 root.wm_title("Clueless")
-width= root.winfo_screenwidth() 
-height= root.winfo_screenheight()-75
+width = root.winfo_screenwidth() 
+height = root.winfo_screenheight()-75
 root.geometry("%dx%d" % (width, height))
+
+# banner
+banner = Label(root, width="1000", height="50")
+banner.place(x=0, y=0)
+banner.config(bg='black')
+
+# Chers Wardrobe Text
+chersWardrobeText = Label(root, text="CHER'S WARDROBE", font=("Impact", 30), fg='white')
+chersWardrobeText.place(x=0, y=0)
+chersWardrobeText.config(bg='black')
 
 # adding background image
 bgImage = PhotoImage(file = "leopard-bg.png")
-label1 = Label(root, image = bgImage)
-label1.place(x=0, y=0)
+background = Label(root, image = bgImage)
+background.place(x=0, y=50)
+
+#shirt label
+shirtbox = Label(root, bg='white', width="70", height="15")
+shirtbox.place(x=width/2-250, y=70)
+
+#pant label
+pantbox = Label(root, bg='white', width="70", height="15")
+pantbox.place(x=width/2-250, y=365)
 
 # show window
 root.mainloop()
-
-
