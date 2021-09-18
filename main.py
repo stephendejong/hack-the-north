@@ -35,5 +35,16 @@ shirtbox.place(x=width/2-250, y=70)
 pantbox = Label(root, bg='white', width="70", height="15")
 pantbox.place(x=width/2-250, y=365)
 
+#image gallery
+top2 = PhotoImage(file="top2.png")
+top4 = PhotoImage(file="shirt4.png")
+top5 = PhotoImage(file="top5.png")
+
+toplist = [top2, top4, top5]
+
+currentimg = toplist[1]
+
+shirtbox.config(image=currentimg, width="300", height="300")
+
 # show window
 root.mainloop()
