@@ -75,8 +75,25 @@ def nexttop(ti):
     shirtbox.image = newimg
 
 
-nextbutton = Button(root, text=">>", command=lambda: nexttop(topindex))
-nextbutton.place(x=900, y=500)
+#placing the button
+photoL = PhotoImage(file = "left-arrow.png")
+photoR = PhotoImage(file = "right-arrow.png")
+#Bottom left
+buttonBL = Button(root, text = "Howdy", width = "235", height = "50",bd=5,image=photoL)
+buttonBL.pack()
+buttonBL.place(x=width/2-250, y=595)
+#Bottom right
+buttonBR = Button(root, text = "Howdy", width = "235", height = "50",bd=5, image=photoR)
+buttonBR.pack()
+buttonBR.place(x=width/2, y=595)
+#Top left
+buttonTL = Button(root, text = "Howdy", width = "235", height = "50",bd=5, image=photoL)
+buttonTL.pack()
+buttonTL.place(x=width/2-250, y=300)
+#Top right
+buttonTR = Button(root, text = "Howdy", width = "235", height = "50",bd=5, image=photoR, command=lambda: nexttop(topindex))
+buttonTR.pack()
+buttonTR.place(x=width/2, y=300)
 
 # show window
 root.mainloop()
