@@ -1,4 +1,3 @@
-
 from tkinter import *
 
 # making window
@@ -37,15 +36,20 @@ bottombox = Label(root, bg='white', width="70", height="15")
 bottombox.place(x=width/2-250, y=400)
 
 #image gallery
+top1 = PhotoImage(file="jacket1.png")
 top2 = PhotoImage(file="top2.png")
-top4 = PhotoImage(file="shirt4.png")
-top5 = PhotoImage(file="top5.png")
-bottom1 = PhotoImage(file="skirt1.png")
-bottom2 = PhotoImage(file="skirt2.png")
-bottom3 = PhotoImage(file="skirt3.png")
+top3 = PhotoImage(file="shirt4.png")
+top4 = PhotoImage(file="top5.png")
+top5 = PhotoImage(file="top1.png")
 
-toplist = [top2, top4, top5]
-bottomlist = [bottom1, bottom2, bottom3]
+bottom1 = PhotoImage(file="skirt6.png")
+bottom2 = PhotoImage(file="skirt3.png")
+bottom3 = PhotoImage(file="skirt2.png")
+bottom4 = PhotoImage(file="skirt1.png")
+bottom5 = PhotoImage(file="bottom1.png")
+
+toplist = [top1, top2, top4, top3, top5]
+bottomlist = [bottom1, bottom2, bottom3, bottom4, bottom5]
 
 currentimg = toplist[0]
 currentbot = bottomlist[0]
@@ -57,10 +61,10 @@ bottombox.config(image=currentbot, width="500", height="300")
 
 def dressmereaction(topindex, bottomindex):
     if topindex == bottomindex:
-        dressme = Label(root, bg='white', width="20", height="5", text="CUTE!", font=("Impact", 24))
+        dressme = Label(root, bg='white', width="20", height="5", text="CUTE!\n<3", font=("Impact", 24))
         dressme.place(x=1060, y=200)
     else:
-        dressme = Label(root, bg='white', width="20", height="5", text="You're totally buggin'!", font=("Impact", 24))
+        dressme = Label(root, bg='white', width="20", height="5", text="You're totally buggin'!\n>:|", font=("Impact", 24))
         dressme.place(x=1060, y=200)
 
 
@@ -80,7 +84,7 @@ def nexttop(ti):
     shirtbox.image = newimg
 
 def lasttop(ti):
-    global topindex 
+    global topindex
     if (ti == 0):
         newimg = toplist[-1]
         topindex = len(toplist)-1
